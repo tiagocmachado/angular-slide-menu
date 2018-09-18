@@ -1,5 +1,7 @@
 <main class="sm-main">
   <div class="sm-main__text">
+    <button (click)="!panelState ? open(): close()">{{panelState}}</button>
+
     <span class="sm-main__title">{{title}}</span>
     <span class="sm-main__sentence"><sup>“</sup>{{sentence}}<sup>“</sup></span>
     <span class="sm-main__author">{{author}}</span>
