@@ -1,0 +1,24 @@
+.sm-button {
+  cursor: pointer;
+
+  &__submit {
+    width: 158px;
+    height: 53px;
+    border-radius: 100px;
+    background: #5e60e5;
+    font-size: 18px;
+    color: $white;
+
+    &:disabled {
+      color: #6b6b6b;
+      background-color: #bdbebf;
+    }
+  }
+
+  &__cancel {
+    height: 21px;
+    opacity: 0.87;
+    font-size: 18px;
+    color: $black;
+  }
+}

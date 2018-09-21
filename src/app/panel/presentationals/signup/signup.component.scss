@@ -1,0 +1,62 @@
+@import "../../../../assets/styles/constants/index";
+
+.sm-signup {
+  display: flex;
+  flex-direction: column;
+  width:  100%;
+  background: #FFFFFF;
+  padding: 62px 50px;
+
+  &__logo {
+    height: 70px;
+    width: 70px;
+
+    &-image {
+      background: transparent url('../../../../assets/images/logo.jpg') no-repeat;
+      height: 100%;
+      background-size: cover;
+      width: 100%;
+    }
+  }
+
+  &__title,
+  &__sub-title {
+    opacity: 0.87;
+    color: #000000;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 500;
+    margin: 25px 0 10px;
+  }
+
+  &__sub-title {
+    font-size: 20px;
+    font-weight: normal;
+  }
+
+  form {
+    margin-top: 60px;
+  }
+
+  &__names {
+    display: flex;
+    justify-content: space-between;
+
+    sm-input-text {
+      width: calc(50% - 13px);
+    }
+  }
+
+  &__buttons {
+    button:last-child {
+      margin-left: 14px;
+    }
+  }
+
+  sm-checkbox {
+    margin-bottom: 35px;
+    display: block;
+  }
+}

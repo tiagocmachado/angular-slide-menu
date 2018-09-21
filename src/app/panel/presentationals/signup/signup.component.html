@@ -1,0 +1,80 @@
+<div class="sm-signup" [@slide]>
+  <div class="sm-signup__animator">
+    <div class="sm-signup__logo">
+      <div class="sm-signup__logo-image"></div>
+    </div>
+    <h2 class="sm-signup__title">Start your 14 day free trial</h2>
+    <span class="sm-signup__sub-title">No credit card required</span>
+    <form [formGroup]="form" class="form">
+      <div class="sm-signup__names">
+        <sm-input-text
+          [name]="'firstName'"
+          [isRequired]="true"
+          [label]="'first name'"
+          [control]="form.get('firstName')"
+          formControlName="firstName">
+        </sm-input-text>
+        <sm-input-text
+          [name]="'lastName'"
+          [isRequired]="true"
+          [label]="'last name'"
+          [control]="form.get('lastName')"
+          formControlName="lastName">
+        </sm-input-text>
+      </div>
+      <sm-input-text
+        [name]="'companyName'"
+        [isRequired]="true"
+        [label]="'company name'"
+        [control]="form.get('companyName')"
+        formControlName="companyName">
+      </sm-input-text>
+      <sm-input-text
+        [name]="'email'"
+        [isRequired]="true"
+        [label]="'email'"
+        [control]="form.get('email')"
+        formControlName="email">
+      </sm-input-text>
+      <sm-input-text
+        [name]="'password'"
+        [isRequired]="true"
+        [label]="'password'"
+        [isPassword]="true"
+        [control]="form.get('password')"
+        formControlName="password">
+      </sm-input-text>
+      <sm-input-text
+        [name]="'confirmPassword'"
+        [isRequired]="true"
+        [label]="'confirm password'"
+        [isPassword]="true"
+        [isPasswordConfirmation]="true"
+        [control]="form.get('confirmPassword')"
+        formControlName="confirmPassword">
+      </sm-input-text>
+      <sm-checkbox
+        [name]="'agreement'"
+        [isRequired]="true"
+        [label]="'I agree to the terms of service.'"
+        [control]="form.get('agreement')"
+        formControlName="agreement">
+      </sm-checkbox>
+    </form>
+    <div class="sm-signup__buttons">
+      <button type="button"
+              class="sm-button sm-button__submit"
+              [attr.data-automation]="'submit'"
+              [disabled]="!isFormValid()"
+              (click)="handleSubmit()">
+        {{'submit'}}
+      </button>
+      <button type="button"
+              class="sm-button sm-button__cancel"
+              [attr.data-automation]="'cancel'"
+              (click)="handleCancel()">
+        {{'cancel'}}
+      </button>
+    </div>
+  </div>
+</div>

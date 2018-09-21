@@ -1,0 +1,12 @@
+<div class="sm-checkbox">
+  <div class="sm-checkbox__shape">
+    <input type="checkbox"
+           id="checkbox"
+           [value]="value"
+           [checked]="isChecked()"
+           (click)="onInputChange()"
+           [(ngModel)]="control.checked">
+    <label for="checkbox"></label>
+  </div>
+  <span class="sm-checkbox__label">{{label}}</span>
+</div>

@@ -1,50 +1,25 @@
 import {Action} from '@ngrx/store';
 
+import {SaveUserResource} from './panel.resource';
+
 export enum PanelActionsEnum {
-  OpenPanel = '[Actions] Open panel',
-  OpenPanelSuccess = '[Actions] Open panel success',
-  ClosePanel = '[Actions] Close panel',
-  ClosePanelSuccess = '[Actions] Close panel success',
-  ResetPanel = '[Actions] Reset panel',
-  ResetPanelSuccess = '[Actions] Reset panel success',
+  SubmitForm = '[Actions] Submit panel',
+  SubmitFormSuccess = '[Actions] Submit panel success',
 }
 
 export module PanelAction {
+  export module Submit {
+    export class Form implements Action {
+      readonly type = PanelActionsEnum.SubmitForm;
 
-  export module Reset {
-    export class Panel implements Action {
-      readonly type = PanelActionsEnum.ResetPanel;
+      constructor(public payload: SaveUserResource) {
+      }
     }
 
-    export class PanelSuccess implements Action {
-      readonly type = PanelActionsEnum.ResetPanelSuccess;
-    }
-  }
-
-  export module Open {
-    export class Panel implements Action {
-      readonly type = PanelActionsEnum.OpenPanel;
-    }
-
-    export class PanelSuccess implements Action {
-      readonly type = PanelActionsEnum.OpenPanelSuccess;
-    }
-  }
-
-  export module Close {
-    export class Panel implements Action {
-      readonly type = PanelActionsEnum.ClosePanel;
-    }
-
-    export class PanelSuccess implements Action {
-      readonly type = PanelActionsEnum.ClosePanelSuccess;
+    export class FormSuccess implements Action {
+      readonly type = PanelActionsEnum.SubmitFormSuccess;
     }
   }
 }
 
-export type PanelAction = PanelAction.Open.Panel
-  | PanelAction.Open.PanelSuccess
-  | PanelAction.Close.Panel
-  | PanelAction.Close.PanelSuccess
-  | PanelAction.Reset.Panel
-  | PanelAction.Reset.PanelSuccess;
+export type PanelAction = PanelAction.Submit.Form | PanelAction.Submit.FormSuccess;

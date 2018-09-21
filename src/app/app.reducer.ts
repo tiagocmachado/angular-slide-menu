@@ -1,5 +1,5 @@
-import {UiSlice} from './state/ui.slice';
+import {PanelSlice} from './state/panelSlice';
 
 export interface State {
-  uiSlice: UiSlice;
+  uiSlice: PanelSlice;
 }

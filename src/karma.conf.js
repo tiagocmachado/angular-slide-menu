@@ -21,11 +21,36 @@ module.exports = function (config) {
       fixWebpackSourcePaths: true
     },
     reporters: ['progress', 'kjhtml'],
+    specReporter: {
+      maxLogLines: 5,
+      suppressErrorSummary: false,
+      suppressFailed: false,
+      suppressPassed: false,
+      suppressSkipped: true,
+      showSpecTiming: false,
+      failFast: false
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['ChromeHeadless'],
+    browserDisconnectTolerance: 1,
+    browserNoActivityTimeout: 30000,
+    customLaunchers: {
+      ChromeHeadless: {
+        base: 'Chrome',
+        flags: [
+          '--no-sandbox',
+          '--headless',
+          '--disable-gpu',
+          '--remote-debugging-port=9222',
+          '--window-size=1920,1200',
+          '--disable-translate',
+          '--disable-extensions'
+        ]
+      }
+    },
     singleRun: false
   });
 };
